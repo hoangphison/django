@@ -70,7 +70,7 @@ class DatabaseOperations(BaseDatabaseOperations):
 
     def _convert_field_to_tz(self, field_name, tzname):
         if settings.USE_TZ:
-            field_name = "CONVERT_TZ(%s, '+00:00', '+09:00')" % (field_name, tzname)
+            field_name = "CONVERT_TZ(%s, '+00:00', '+09:00')" % (field_name)
         return field_name
 
     def datetime_cast_date_sql(self, field_name, tzname):
